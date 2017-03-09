@@ -142,14 +142,7 @@ if (!file_exists(GLPI_CONFIG_DIR . "/config_db.php")) {
          <input type="submit" name="submit" value="'._sx('button', 'Post').'" class="submit" />
          </p>';
 
-   if ($CFG_GLPI["use_mailing"]
-       && countElementsInTable('glpi_notifications',
-                               "`itemtype`='User'
-                                AND `event`='passwordforget'
-                                AND `is_active`=1")) {
-      echo '<a id="forget" href="front/lostpassword.php?lostpassword=1">'.
-             __('Forgotten password?').'</a>';
-   }
+
    Html::closeForm();
 
    echo "<script type='text/javascript' >\n";
